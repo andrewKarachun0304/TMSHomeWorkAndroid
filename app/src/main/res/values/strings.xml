@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TMSHomeWorkAndroid</string>
+    <string name="home_work_1_str">Home Work 1</string>
+    <string name="home_work_2_str">Home Work 2</string>
+    <string name="home_work_3_str">Home Work 3</string>
+    <string name="hw1_text_str">My first application on Android</string>
 </resources>
