@@ -10,8 +10,7 @@
         android:id="@+id/hw1_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/home_work_1_str"
-        android:onClick="onHw1BtnClick"/>
+        android:text="@string/home_work_1_str"/>
 
     <Button
         android:id="@+id/hw2_btn"
