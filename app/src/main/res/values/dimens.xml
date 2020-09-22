@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_iv">500dp</dimen>
+    <dimen name="margin_start_et">10dp</dimen>
+    <dimen name="margin_end_et">@dimen/margin_start_et</dimen>
+    <dimen name="margin_top_et">20dp</dimen>
+    <dimen name="margin_top_btn">@dimen/margin_top_et</dimen>
+</resources>
