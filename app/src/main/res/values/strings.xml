@@ -7,4 +7,15 @@
     <string name="loaded_image_str">Loaded image</string>
     <string name="enter_image_url_str">Enter image URL</string>
     <string name="load_image_str">Load image</string>
+    <string name="flags_str">Flags</string>
+    <string name="animation_str">Animation</string>
+    <string name="armenia_str">Armenia</string>
+    <string name="austria_str">Austria</string>
+    <string name="belgium_str">Belgium</string>
+    <string name="latvia_str">Latvia</string>
+    <string name="denmark_str">Denmark</string>
+    <string name="spain_str">Spain</string>
+    <string name="cat_animation_description_str">Cat animation</string>
+    <string name="dance_flor_background_description_str">Dance flor background</string>
+    <string name="sky_background_description_str">Sky background</string>
 </resources>
