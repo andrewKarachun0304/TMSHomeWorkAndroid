@@ -8,7 +8,9 @@ class Districts(
     val name: String,
     var harvest: MutableLiveData<Harvest>
 ) {
-    suspend fun updateHarvestResult(duration: Long) {
+    var generalSum = 0
+
+    fun updateHarvestResult() {
         val harvest = Harvest(
             harvest.value?.potatoes ?: 0,
             harvest.value?.cabbage ?: 0,
@@ -19,8 +21,8 @@ class Districts(
         harvest.beet += (Math.random() * 14 + 1).roundToInt()
 
         this.harvest.postValue(harvest)
-//        delay(duration)
+        generalSum = harvest.generalSum()
     }
 
-    fun whoWinCheck() = harvest.value?.checkNormal() ?: false
+    fun winCheck() = harvest.value?.checkNormal() ?: false
 }

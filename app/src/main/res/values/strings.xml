@@ -31,4 +31,5 @@
     <string name="grodno_str">Grodno</string>
     <string name="gomel_str">Gomel</string>
     <string name="mogilev_str">Mogilev</string>
+    <string name="void_str" />
 </resources>

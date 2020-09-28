@@ -1,5 +1,6 @@
 package com.andrewKarachun0304.tmshomeworkandroid
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,57 +8,45 @@ import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.activity_harvest_h_w4.*
 
 class HarvestActivityHW4 : AppCompatActivity() {
-    private lateinit var harvestingViewModel: HarvestingViewModel
+    private val harvestingViewModel by lazy {
+        ViewModelProvider(this).get(HarvestingViewModel::class.java)
+    }
+    private val potatoesListTV by lazy {
+        listOf(
+            potatoes_distr1_tv,
+            potatoes_distr2_tv,
+            potatoes_distr3_tv,
+            potatoes_distr4_tv,
+            potatoes_distr5_tv,
+            potatoes_distr6_tv
+        )
+    }
+    private val cabbageListTV by lazy {
+        listOf(
+            cabbage_distr1_tv,
+            cabbage_distr2_tv,
+            cabbage_distr3_tv,
+            cabbage_distr4_tv,
+            cabbage_distr5_tv,
+            cabbage_distr6_tv
+        )
+    }
+    private val beetListTV by lazy {
+        listOf(
+            beet_distr1_tv,
+            beet_distr2_tv,
+            beet_distr3_tv,
+            beet_distr4_tv,
+            beet_distr5_tv,
+            beet_distr6_tv
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_harvest_h_w4)
 
-        harvestingViewModel = ViewModelProvider(this).get(HarvestingViewModel::class.java)
-        harvestingViewModel.districtsList[0].harvest.observe(this, {
-            with(it) {
-                potatoes_distr1_tv.text = "$potatoes Ton"
-                cabbage_distr1_tv.text = "$cabbage Ton"
-                beet_distr1_tv.text = "$beet Ton"
-            }
-        })
-        harvestingViewModel.districtsList[1].harvest.observe(this, {
-            with(it) {
-                potatoes_distr2_tv.text = "$potatoes Ton"
-                cabbage_distr2_tv.text = "$cabbage Ton"
-                beet_distr2_tv.text = "$beet Ton"
-            }
-        })
-        harvestingViewModel.districtsList[2].harvest.observe(this, {
-            with(it) {
-                potatoes_distr3_tv.text = "$potatoes Ton"
-                cabbage_distr3_tv.text = "$cabbage Ton"
-                beet_distr3_tv.text = "$beet Ton"
-            }
-        })
-        harvestingViewModel.districtsList[3].harvest.observe(this, {
-            with(it) {
-                potatoes_distr4_tv.text = "$potatoes Ton"
-                cabbage_distr4_tv.text = "$cabbage Ton"
-                beet_distr4_tv.text = "$beet Ton"
-            }
-        })
-        harvestingViewModel.districtsList[4].harvest.observe(this, {
-            with(it) {
-                potatoes_distr5_tv.text = "$potatoes Ton"
-                cabbage_distr5_tv.text = "$cabbage Ton"
-                beet_distr5_tv.text = "$beet Ton"
-            }
-        })
-        harvestingViewModel.districtsList[5].harvest.observe(this, {
-            with(it) {
-                potatoes_distr6_tv.text = "$potatoes Ton"
-                cabbage_distr6_tv.text = "$cabbage Ton"
-                beet_distr6_tv.text = "$beet Ton"
-            }
-        })
-        harvestingViewModel.winner.observe(this, {
-            winner_tv.text = "$it"
-        })
+        initViewModel()
     }
 
     fun homeWork4BtnOnClick(view: View) {
@@ -65,6 +54,26 @@ class HarvestActivityHW4 : AppCompatActivity() {
             R.id.start_btn -> harvestingViewModel.userClickedStart()
             R.id.cancel_btn -> harvestingViewModel.userClickCancel()
         }
+    }
 
+    @SuppressLint("SetTextI18n")
+    private fun initViewModel() {
+        for (i in potatoesListTV.indices) {
+            harvestingViewModel.districtsList[i].harvest.observe(this, { harvest ->
+                with(harvest) {
+                    potatoesListTV[i].text = "$potatoes Ton"
+                    cabbageListTV[i].text = "$cabbage Ton"
+                    beetListTV[i].text = "$beet Ton"
+                }
+            })
+        }
+        harvestingViewModel.winner.observe(this, { winner ->
+            winner_tv.text = winner
+        })
+        harvestingViewModel.isWinner.observe(this, { isWinner ->
+            if (isWinner) {
+                harvestingViewModel.whoWin()
+            }
+        })
     }
 }

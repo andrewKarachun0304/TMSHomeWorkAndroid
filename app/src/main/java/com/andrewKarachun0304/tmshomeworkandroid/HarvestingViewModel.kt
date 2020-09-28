@@ -3,19 +3,18 @@ package com.andrewKarachun0304.tmshomeworkandroid
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
-import kotlin.math.roundToLong
 
 class HarvestingViewModel : ViewModel() {
-    var districtsList = DistrictsData.getDistrictsData()
+    val districtsList = DistrictsData.getDistrictsData()
     val winner = MutableLiveData("")
-    private var flag = false
+    val isWinner = MutableLiveData(false)
 
-    private val job by lazy {
+    private val updateHarvestJob by lazy {
         CoroutineScope(Dispatchers.IO).launch {
             while (isActive) {
                 delay(1000)
                 for (district in districtsList) {
-                    district.updateHarvestResult((Math.random() * 4000 + 1000).roundToLong())
+                    district.updateHarvestResult()
                 }
             }
         }
@@ -25,9 +24,9 @@ class HarvestingViewModel : ViewModel() {
         CoroutineScope(Dispatchers.IO).launch {
             while (isActive){
                 for (district in districtsList){
-                    if (district.whoWinCheck()) {
-                        winner.postValue("${district.name} win!!!")
-                        job.cancel()
+                    if (district.winCheck()) {
+                        isWinner.postValue(true)
+                        updateHarvestJob.cancel()
                         return@launch
                     }
                 }
@@ -36,16 +35,25 @@ class HarvestingViewModel : ViewModel() {
         }
     }
 
+    fun whoWin(){
+        var max = 0
+        var winnerName = ""
+        for (district in districtsList){
+            if (district.generalSum > max){
+                max = district.generalSum
+                winnerName = district.name
+            }
+        }
+        winner.postValue("$winnerName win!!!")
+    }
 
     fun userClickedStart() {
-        flag = true
-        job.start()
+        updateHarvestJob.start()
         whoWinCheckJob.start()
     }
 
     fun userClickCancel() {
-        flag = false
-        job.cancel()
+        updateHarvestJob.cancel()
         whoWinCheckJob.cancel()
     }
 }

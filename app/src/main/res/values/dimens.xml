@@ -15,4 +15,8 @@
 
     <dimen name="button_text_size">24sp</dimen>
     <dimen name="tv_text_size">24sp</dimen>
+
+    <dimen name="padding_ll">10dp</dimen>
+    <dimen name="margin_top_ll">10dp</dimen>
+
 </resources>

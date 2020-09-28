@@ -31,7 +31,7 @@
     </style>
 
     <style name="ButtonHW4Style" parent="@android:style/TextAppearance.Material.Button">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:textColor">@color/turquoise_button_text_color</item>
@@ -57,7 +57,6 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
-        <item name="android:layout_weight">1</item>
     </style>
 
     <style name="LinearLayoutHW4Style.Horizontal" parent="LinearLayoutHW4Style">
@@ -66,6 +65,7 @@
 
     <style name="LinearLayoutHW4Style.Vertical" parent="LinearLayoutHW4Style">
         <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/padding_ll</item>
     </style>
 
     <style name="LinearLayoutHW4Style">
