@@ -2,10 +2,7 @@ package com.andrewKarachun0304.tmshomeworkandroid
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import kotlin.math.roundToLong
 
 class HarvestingViewModel : ViewModel() {
@@ -15,7 +12,7 @@ class HarvestingViewModel : ViewModel() {
 
     private val job by lazy {
         CoroutineScope(Dispatchers.IO).launch {
-            while (flag) {
+            while (isActive) {
                 delay(1000)
                 for (district in districtsList) {
                     district.updateHarvestResult((Math.random() * 4000 + 1000).roundToLong())
@@ -26,10 +23,10 @@ class HarvestingViewModel : ViewModel() {
 
     private val whoWinCheckJob by lazy {
         CoroutineScope(Dispatchers.IO).launch {
-            while (true){
+            while (isActive){
                 for (district in districtsList){
                     if (district.whoWinCheck()) {
-                        winner.postValue(district.name)
+                        winner.postValue("${district.name} win!!!")
                         job.cancel()
                         return@launch
                     }

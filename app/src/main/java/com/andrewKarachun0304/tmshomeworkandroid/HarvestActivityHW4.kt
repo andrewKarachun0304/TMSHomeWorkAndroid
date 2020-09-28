@@ -56,7 +56,7 @@ class HarvestActivityHW4 : AppCompatActivity() {
             }
         })
         harvestingViewModel.winner.observe(this, {
-            winner_tv.text = "$it Win!!!"
+            winner_tv.text = "$it"
         })
     }
 
