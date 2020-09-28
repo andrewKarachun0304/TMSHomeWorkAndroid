@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@android:style/TextAppearance.Material.Button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HarvestActivityHW4"
-    style="@android:style/TextAppearance.Material.Button">
+    tools:context=".HarvestActivityHW4">
 
     <TextView
         android:id="@+id/winner_tv"
         style="@style/TextViewMaxHW4Style"
+        android:layout_marginTop="@dimen/margin_top_tv"
         android:text="@string/void_str"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/margin_top_tv"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -25,15 +24,14 @@
         <Button
             android:id="@+id/start_btn"
             style="@style/ButtonHW4Style"
-            android:text="@string/start_str"
             android:onClick="homeWork4BtnOnClick"
-            />
+            android:text="@string/start_str" />
 
         <Button
             android:id="@+id/cancel_btn"
             style="@style/ButtonHW4Style"
-            android:text="@string/cancel_str"
-            android:onClick="homeWork4BtnOnClick"/>
+            android:onClick="homeWork4BtnOnClick"
+            android:text="@string/cancel_str" />
 
     </LinearLayout>
 
@@ -43,8 +41,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/winner_tv">
 
-        <LinearLayout
-            style="@style/LinearLayoutHW4Style.Vertical">
+        <LinearLayout style="@style/LinearLayoutHW4Style.Vertical">
 
             <LinearLayout
                 style="@style/LinearLayoutHW4Style.Vertical"
@@ -52,10 +49,9 @@
 
                 <TextView
                     style="@style/TextViewMaxHW4Style"
-                    android:text="@string/minsk_str"/>
+                    android:text="@string/minsk_str" />
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         style="@style/TextViewHW4Style"
@@ -96,15 +92,14 @@
 
             <LinearLayout
                 style="@style/LinearLayoutHW4Style.Vertical"
-                android:background="@drawable/layout_dr_green"
-                android:layout_marginTop="@dimen/margin_top_ll">
+                android:layout_marginTop="@dimen/margin_top_ll"
+                android:background="@drawable/layout_dr_green">
 
                 <TextView
                     style="@style/TextViewMaxHW4Style"
-                    android:text="@string/brest_str"/>
+                    android:text="@string/brest_str" />
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         style="@style/TextViewHW4Style"
@@ -120,8 +115,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         android:id="@+id/potatoes_distr2_tv"
@@ -144,15 +138,14 @@
 
             <LinearLayout
                 style="@style/LinearLayoutHW4Style.Vertical"
-                android:background="@drawable/layout_dr_blue"
-                android:layout_marginTop="@dimen/margin_top_ll">
+                android:layout_marginTop="@dimen/margin_top_ll"
+                android:background="@drawable/layout_dr_blue">
 
                 <TextView
                     style="@style/TextViewMaxHW4Style"
-                    android:text="@string/vitebsk_str"/>
+                    android:text="@string/vitebsk_str" />
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         style="@style/TextViewHW4Style"
@@ -168,8 +161,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         android:id="@+id/potatoes_distr3_tv"
@@ -192,15 +184,14 @@
 
             <LinearLayout
                 style="@style/LinearLayoutHW4Style.Vertical"
-                android:background="@drawable/layout_dr_yellow"
-                android:layout_marginTop="@dimen/margin_top_ll">
+                android:layout_marginTop="@dimen/margin_top_ll"
+                android:background="@drawable/layout_dr_yellow">
 
                 <TextView
                     style="@style/TextViewMaxHW4Style"
-                    android:text="@string/grodno_str"/>
+                    android:text="@string/grodno_str" />
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         style="@style/TextViewHW4Style"
@@ -216,8 +207,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         android:id="@+id/potatoes_distr4_tv"
@@ -240,15 +230,14 @@
 
             <LinearLayout
                 style="@style/LinearLayoutHW4Style.Vertical"
-                android:background="@drawable/layout_dr_green"
-                android:layout_marginTop="@dimen/margin_top_ll">
+                android:layout_marginTop="@dimen/margin_top_ll"
+                android:background="@drawable/layout_dr_green">
 
                 <TextView
                     style="@style/TextViewMaxHW4Style"
-                    android:text="@string/gomel_str"/>
+                    android:text="@string/gomel_str" />
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         style="@style/TextViewHW4Style"
@@ -264,8 +253,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         android:id="@+id/potatoes_distr5_tv"
@@ -288,15 +276,14 @@
 
             <LinearLayout
                 style="@style/LinearLayoutHW4Style.Vertical"
-                android:background="@drawable/layout_dr_blue"
-                android:layout_marginTop="@dimen/margin_top_ll">
+                android:layout_marginTop="@dimen/margin_top_ll"
+                android:background="@drawable/layout_dr_blue">
 
                 <TextView
                     style="@style/TextViewMaxHW4Style"
-                    android:text="@string/mogilev_str"/>
+                    android:text="@string/mogilev_str" />
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         style="@style/TextViewHW4Style"
@@ -312,8 +299,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayoutHW4Style.Horizontal">
+                <LinearLayout style="@style/LinearLayoutHW4Style.Horizontal">
 
                     <TextView
                         android:id="@+id/potatoes_distr6_tv"

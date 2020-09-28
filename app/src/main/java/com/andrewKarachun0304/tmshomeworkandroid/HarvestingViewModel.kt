@@ -22,8 +22,8 @@ class HarvestingViewModel : ViewModel() {
 
     private val whoWinCheckJob by lazy {
         CoroutineScope(Dispatchers.IO).launch {
-            while (isActive){
-                for (district in districtsList){
+            while (isActive) {
+                for (district in districtsList) {
                     if (district.winCheck()) {
                         isWinner.postValue(true)
                         updateHarvestJob.cancel()
@@ -35,11 +35,11 @@ class HarvestingViewModel : ViewModel() {
         }
     }
 
-    fun whoWin(){
+    fun whoWin() {
         var max = 0
         var winnerName = ""
-        for (district in districtsList){
-            if (district.generalSum > max){
+        for (district in districtsList) {
+            if (district.generalSum > max) {
                 max = district.generalSum
                 winnerName = district.name
             }
