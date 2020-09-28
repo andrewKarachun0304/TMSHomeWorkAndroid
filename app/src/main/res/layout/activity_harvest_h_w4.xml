@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HarvestActivityHW4"
+    android:padding="10dp"
+    style="@android:style/TextAppearance.Material.Button">
+
+    <TextView
+        android:id="@+id/winner_tv"
+        style="@style/TextViewMaxHW4Style"
+        android:text=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="@style/LinearLayoutHW4Style.Horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/start_btn"
+            style="@style/ButtonHW4Style"
+            android:text="@string/start_str"
+            android:onClick="homeWork4BtnOnClick"
+            />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            style="@style/ButtonHW4Style"
+            android:text="@string/cancel_str"
+            android:onClick="homeWork4BtnOnClick"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/winner_tv"
+        tools:layout_editor_absoluteX="10dp">
+
+        <LinearLayout
+            style="@style/LinearLayoutHW4Style.Vertical">
+
+            <LinearLayout
+                style="@style/LinearLayoutHW4Style.Vertical"
+                android:background="@drawable/layout_dr_yellow"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/district1_tv"
+                    style="@style/TextViewMaxHW4Style"
+                    android:text="@string/minsk_str"/>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/potatoes_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/cabbage_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/beet_str" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        android:id="@+id/potatoes_distr1_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/cabbage_distr1_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/beet_distr1_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayoutHW4Style.Vertical"
+                android:background="@drawable/layout_dr_green"
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/district2_tv"
+                    style="@style/TextViewMaxHW4Style"
+                    android:text="@string/brest_str"/>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/potatoes_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/cabbage_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/beet_str" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        android:id="@+id/potatoes_distr2_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/cabbage_distr2_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/beet_distr2_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayoutHW4Style.Vertical"
+                android:background="@drawable/layout_dr_blue"
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/district3_tv"
+                    style="@style/TextViewMaxHW4Style"
+                    android:text="@string/vitebsk_str"/>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/potatoes_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/cabbage_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/beet_str" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        android:id="@+id/potatoes_distr3_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/cabbage_distr3_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/beet_distr3_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayoutHW4Style.Vertical"
+                android:background="@drawable/layout_dr_yellow"
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/district4_tv"
+                    style="@style/TextViewMaxHW4Style"
+                    android:text="@string/grodno_str"/>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/potatoes_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/cabbage_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/beet_str" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        android:id="@+id/potatoes_distr4_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/cabbage_distr4_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/beet_distr4_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayoutHW4Style.Vertical"
+                android:background="@drawable/layout_dr_green"
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/district5_tv"
+                    style="@style/TextViewMaxHW4Style"
+                    android:text="@string/gomel_str"/>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/potatoes_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/cabbage_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/beet_str" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        android:id="@+id/potatoes_distr5_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/cabbage_distr5_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/beet_distr5_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/LinearLayoutHW4Style.Vertical"
+                android:background="@drawable/layout_dr_blue"
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/district6_tv"
+                    style="@style/TextViewMaxHW4Style"
+                    android:text="@string/mogilev_str"/>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/potatoes_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/cabbage_str" />
+
+                    <TextView
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/beet_str" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayoutHW4Style.Horizontal">
+
+                    <TextView
+                        android:id="@+id/potatoes_distr6_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/cabbage_distr6_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                    <TextView
+                        android:id="@+id/beet_distr6_tv"
+                        style="@style/TextViewHW4Style"
+                        android:text="@string/zero_ton_str" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

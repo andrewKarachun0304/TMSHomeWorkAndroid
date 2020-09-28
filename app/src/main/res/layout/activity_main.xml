@@ -34,6 +34,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/hw3_btn"
         style="@style/MyMaterialButtonStyle"
+        android:onClick="homeWorkBtnOnClick"
         android:text="@string/home_work_3_str"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
