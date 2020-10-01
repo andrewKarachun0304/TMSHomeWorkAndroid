@@ -3,6 +3,7 @@
     <string name="home_work_1_str">Home Work 1</string>
     <string name="home_work_2_str">Home Work 2</string>
     <string name="home_work_3_str">Home Work 3</string>
+    <string name="home_work_4_str">Home Work 4</string>
     <string name="hw1_text_str">My first application on Android</string>
     <string name="loaded_image_str">Loaded image</string>
     <string name="enter_image_url_str">Enter image URL</string>
@@ -18,4 +19,17 @@
     <string name="cat_animation_description_str">Cat animation</string>
     <string name="dance_flor_background_description_str">Dance flor background</string>
     <string name="sky_background_description_str">Sky background</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_coffee_str">Add kind of coffee</string>
+    <string name="show_all__coffee_str">Show all kind of coffee</string>
+    <string name="add_new_kind_of_coffee_str">add new kind of coffee</string>
+    <string name="coffee_background_str">Coffee background</string>
+    <string name="fill_all_fields">Fill in all the fields!</string>
+    <string name="fill_url_fields">Fill in the field with url!</string>
+    <string name="coffee_price_str">Coffee price</string>
+    <string name="image_url_str">Image url</string>
+    <string name="coffee_name_str">Coffee name</string>
+    <string name="coffee_image_str">Coffee image</string>
+    <string name="activity_background_str">Activity background</string>
 </resources>

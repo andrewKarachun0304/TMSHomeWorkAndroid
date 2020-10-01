@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/sky" />
+        android:src="@drawable/sky"
+        android:contentDescription="@string/activity_background_str" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/hw1_btn"
@@ -38,5 +39,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hw2_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hw4_btn"
+        style="@style/MyMaterialButtonStyle"
+        android:onClick="homeWorkBtnOnClick"
+        android:text="@string/home_work_4_str"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hw3_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
