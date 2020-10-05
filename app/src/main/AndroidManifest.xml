@@ -11,15 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".hw4.HomeWork4Activity"/>
-        <activity android:name=".hw3.HarvestActivityHW4"/>
-        <activity android:name=".hw2.AnimationActivity"/>
+        <activity android:name=".hw5.UserAccountHW5Activity"/>
+        <activity android:name=".hw5.HomeWork5Activity" />
+        <activity android:name=".hw4.HomeWork4Activity" />
+        <activity android:name=".hw3.HarvestActivityHW4" />
+        <activity android:name=".hw2.AnimationActivity" />
         <activity android:name=".hw2.FlagsActivity" />
         <activity android:name=".hw2.HomeWork2Activity" />
         <activity android:name=".hw1.HomeWork1Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
