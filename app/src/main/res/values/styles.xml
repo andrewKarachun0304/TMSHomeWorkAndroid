@@ -48,6 +48,7 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_marginStart">@dimen/margin_start_tv</item>
+    </style>
 
     <style name="ButtonHW4Style" parent="@android:style/TextAppearance.Material.Button">
         <item name="android:layout_width">0dp</item>

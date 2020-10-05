@@ -1,10 +1,11 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw3
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.andrewKarachun0304.tmshomeworkandroid.R
 import kotlinx.android.synthetic.main.activity_harvest_h_w4.*
 
 class HarvestActivityHW4 : AppCompatActivity() {

@@ -1,6 +1,8 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw3
 
 import androidx.lifecycle.MutableLiveData
+import com.andrewKarachun0304.tmshomeworkandroid.hw3.Districts
+import com.andrewKarachun0304.tmshomeworkandroid.hw3.Harvest
 
 object DistrictsData {
     fun getDistrictsData() = listOf(

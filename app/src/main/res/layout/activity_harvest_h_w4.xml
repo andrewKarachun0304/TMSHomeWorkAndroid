@@ -5,7 +5,7 @@
     style="@android:style/TextAppearance.Material.Button"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HarvestActivityHW4">
+    tools:context=".hw3.HarvestActivityHW4">
 
     <TextView
         android:id="@+id/winner_tv"

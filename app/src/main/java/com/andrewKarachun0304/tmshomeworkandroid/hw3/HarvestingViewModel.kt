@@ -1,4 +1,4 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw3
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/sky"
-        android:contentDescription="@string/activity_background_str" />
+        android:contentDescription="@string/background_str" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/hw1_btn"
@@ -49,5 +49,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hw3_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hw5_btn"
+        style="@style/MyMaterialButtonStyle"
+        android:onClick="homeWorkBtnOnClick"
+        android:text="@string/home_work_5_str"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hw4_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hw6_btn"
+        style="@style/MyMaterialButtonStyle"
+        android:text="@string/home_work_6_str"
+        android:onClick="homeWorkBtnOnClick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hw5_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hw7_btn"
+        style="@style/MyMaterialButtonStyle"
+        android:onClick="homeWorkBtnOnClick"
+        android:text="@string/home_work_7_str"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hw6_btn" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hw8_btn"
+        style="@style/MyMaterialButtonStyle"
+        android:onClick="homeWorkBtnOnClick"
+        android:text="@string/home_work_8_str"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hw7_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
