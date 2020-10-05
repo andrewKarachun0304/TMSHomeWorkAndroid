@@ -19,7 +19,7 @@
     <string name="cat_animation_description_str">Cat animation</string>
     <string name="dance_flor_background_description_str">Dance flor background</string>
     <string name="sky_background_description_str">Sky background</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_coffee_str">Add kind of coffee</string>
     <string name="show_all__coffee_str">Show all kind of coffee</string>
@@ -32,4 +32,18 @@
     <string name="coffee_name_str">Coffee name</string>
     <string name="coffee_image_str">Coffee image</string>
     <string name="activity_background_str">Activity background</string>
+    <string name="start_str">Start</string>
+    <string name="cancel_str">Cancel</string>
+    <string name="winner_str">Winner:</string>
+    <string name="zero_ton_str">0 Ton</string>
+    <string name="potatoes_str">Potatoes</string>
+    <string name="cabbage_str">Cabbage</string>
+    <string name="beet_str">Beet</string>
+    <string name="minsk_str">Minsk</string>
+    <string name="brest_str">Brest</string>
+    <string name="vitebsk_str">Vitebsk</string>
+    <string name="grodno_str">Grodno</string>
+    <string name="gomel_str">Gomel</string>
+    <string name="mogilev_str">Mogilev</string>
+    <string name="void_str" />
 </resources>
