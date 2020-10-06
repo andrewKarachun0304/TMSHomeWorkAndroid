@@ -32,10 +32,10 @@ class HomeWork5Activity : AppCompatActivity() {
     }
 
     private fun initUserNameListener() {
-        user_name_et.addTextChangedListener {
-            if (it.isNullOrEmpty()) {
-                user_name_tf.isErrorEnabled = true
-                user_name_tf.error = "Name must be not empty"
+        user_name_et.addTextChangedListener { nameEt ->
+            if (nameEt.isNullOrEmpty()) {
+                login = false
+                user_name_tf.error = resources.getString(R.string.name_must_be_not_empty_str)
             } else {
                 login = true
                 user_name_tf.error = null
@@ -44,10 +44,10 @@ class HomeWork5Activity : AppCompatActivity() {
     }
 
     private fun initUserPasswordListener() {
-        user_password_et.addTextChangedListener {
-            if (it.toString().length < 8) {
-                user_password_tf.isErrorEnabled = true
-                user_password_tf.error = "Password length must be at least 8 characters"
+        user_password_et.addTextChangedListener { passwordEt ->
+            if (passwordEt.toString().length < 8) {
+                password = false
+                user_password_tf.error = resources.getString(R.string.min_password_size_str)
             } else {
                 password = true
                 user_password_tf.error = null
@@ -60,14 +60,17 @@ class HomeWork5Activity : AppCompatActivity() {
         MaterialAlertDialogBuilder(this)
             .setTitle(title)
             .setMessage(message)
-            .setNegativeButton("Ok") { dialog, _ ->
+            .setNegativeButton(resources.getString(R.string.ok_str)) { dialog, _ ->
                 dialog.cancel()
             }
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun successfulSignUp() {
-        createAlertDialog("Success", "${user_name_et.text} you are register")
-            .setPositiveButton("Sign in") { _, _ ->
+        createAlertDialog(
+            resources.getString(R.string.success_str),
+            "${user_name_et.text} ${resources.getString(R.string.register_message_str)}"
+        )
+            .setPositiveButton(resources.getText(R.string.sign_in_str)) { _, _ ->
                 intent = Intent(this, UserAccountHW5Activity::class.java)
                 intent.putExtra(USER_NAME_KEY, user_name_et.text.toString())
                 startActivity(intent)
@@ -77,7 +80,9 @@ class HomeWork5Activity : AppCompatActivity() {
     }
 
     private fun unsuccessfulSignUp() {
-        createAlertDialog("Error", "You are'n register")
-            .show()
+        createAlertDialog(
+            resources.getString(R.string.error_str),
+            resources.getString(R.string.error_message_str)
+        ).show()
     }
 }
