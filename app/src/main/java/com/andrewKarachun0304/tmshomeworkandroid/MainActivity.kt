@@ -4,6 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.andrewKarachun0304.tmshomeworkandroid.hw1.HomeWork1Activity
+import com.andrewKarachun0304.tmshomeworkandroid.hw2.HomeWork2Activity
+import com.andrewKarachun0304.tmshomeworkandroid.hw3.HarvestActivityHW4
+import com.andrewKarachun0304.tmshomeworkandroid.hw4.HomeWork4Activity
+import com.andrewKarachun0304.tmshomeworkandroid.hw5.HomeWork5Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
