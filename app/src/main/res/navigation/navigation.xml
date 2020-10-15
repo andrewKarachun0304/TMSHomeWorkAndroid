@@ -5,7 +5,7 @@
     app:startDestination="@id/startFragment">
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.andrewKarachun0304.tmshomeworkandroid.StartFragment"
+        android:name="com.andrewKarachun0304.tmshomeworkandroid.hw4.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
@@ -17,13 +17,13 @@
     </fragment>
     <fragment
         android:id="@+id/addCoffeeFragment"
-        android:name="com.andrewKarachun0304.tmshomeworkandroid.AddCoffeeFragment"
+        android:name="com.andrewKarachun0304.tmshomeworkandroid.hw4.AddCoffeeFragment"
         android:label="fragment_add_coffee"
         tools:layout="@layout/fragment_add_coffee" >
     </fragment>
     <fragment
         android:id="@+id/allCoffeeListFragment"
-        android:name="com.andrewKarachun0304.tmshomeworkandroid.AllCoffeeListFragment"
+        android:name="com.andrewKarachun0304.tmshomeworkandroid.hw4.AllCoffeeListFragment"
         android:label="fragment_all_coffee_list"
         tools:layout="@layout/fragment_all_coffee_list" >
     </fragment>

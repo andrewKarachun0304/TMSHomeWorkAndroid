@@ -1,9 +1,10 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw2
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.andrewKarachun0304.tmshomeworkandroid.R
 
 class HomeWork2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

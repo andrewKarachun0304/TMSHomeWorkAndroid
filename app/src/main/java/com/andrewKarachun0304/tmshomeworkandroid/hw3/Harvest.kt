@@ -1,4 +1,4 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw3
 
 class Harvest(
     var potatoes: Int,

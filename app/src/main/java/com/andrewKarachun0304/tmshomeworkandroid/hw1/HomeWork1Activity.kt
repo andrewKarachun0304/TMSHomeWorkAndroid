@@ -1,8 +1,9 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.andrewKarachun0304.tmshomeworkandroid.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_home_work1.*
 

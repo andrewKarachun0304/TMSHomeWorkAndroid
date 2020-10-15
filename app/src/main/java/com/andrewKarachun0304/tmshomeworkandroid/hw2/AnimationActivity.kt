@@ -1,4 +1,4 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw2
 
 import android.graphics.BitmapFactory
 import android.graphics.drawable.AnimationDrawable
@@ -6,6 +6,7 @@ import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import com.andrewKarachun0304.tmshomeworkandroid.R
 import kotlinx.android.synthetic.main.activity_animation.*
 
 class AnimationActivity : AppCompatActivity() {

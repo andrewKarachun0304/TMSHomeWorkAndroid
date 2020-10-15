@@ -1,9 +1,10 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw4
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import com.andrewKarachun0304.tmshomeworkandroid.R
 
 class HomeWork4Activity : AppCompatActivity(),
     AddCoffeeFragment.ButtonOnClickListener,

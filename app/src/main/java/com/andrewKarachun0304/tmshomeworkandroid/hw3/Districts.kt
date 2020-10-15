@@ -1,7 +1,7 @@
-package com.andrewKarachun0304.tmshomeworkandroid
+package com.andrewKarachun0304.tmshomeworkandroid.hw3
 
 import androidx.lifecycle.MutableLiveData
-import kotlinx.coroutines.delay
+import com.andrewKarachun0304.tmshomeworkandroid.hw3.Harvest
 import kotlin.math.roundToInt
 
 class Districts(
