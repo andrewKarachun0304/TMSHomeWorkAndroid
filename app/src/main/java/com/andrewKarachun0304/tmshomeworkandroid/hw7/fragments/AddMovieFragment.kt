@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.andrewKarachun0304.tmshomeworkandroid.R
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.database.AppDataBase
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.database.entity.Movie
-import com.andrewKarachun0304.tmshomeworkandroid.hw7.entity.launchIO
+import com.andrewKarachun0304.tmshomeworkandroid.hw7.utils.launchIO
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_add_movie.*
 

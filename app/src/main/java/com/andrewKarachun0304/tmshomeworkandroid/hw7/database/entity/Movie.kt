@@ -1,12 +1,9 @@
 package com.andrewKarachun0304.tmshomeworkandroid.hw7.database.entity
 
-import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
 @Entity(tableName = "movie_table")
 class Movie(
     @PrimaryKey(autoGenerate = true)
@@ -21,4 +18,4 @@ class Movie(
     val duration: Int,
     @ColumnInfo(name = "movie_image_url")
     val url: String
-):Parcelable
+)

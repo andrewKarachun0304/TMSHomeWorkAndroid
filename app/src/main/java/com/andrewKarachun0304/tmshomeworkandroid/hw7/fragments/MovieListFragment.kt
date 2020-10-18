@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.andrewKarachun0304.tmshomeworkandroid.R
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.MovieAdapter
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.database.AppDataBase
-import com.andrewKarachun0304.tmshomeworkandroid.hw7.entity.launchIO
-import com.andrewKarachun0304.tmshomeworkandroid.hw7.entity.launchUI
+import com.andrewKarachun0304.tmshomeworkandroid.hw7.utils.launchForResult
+import com.andrewKarachun0304.tmshomeworkandroid.hw7.utils.launchIO
+import com.andrewKarachun0304.tmshomeworkandroid.hw7.utils.launchUI
 import kotlinx.android.synthetic.main.fragment_movie_list.*
 
 class MovieListFragment : Fragment() {
-    private val controller by lazy { findNavController() }
     private val movieAdapter by lazy { MovieAdapter() }
     private val movieDao by lazy {
         AppDataBase.getInstance(requireContext().applicationContext)?.getMovieDao()
@@ -34,25 +34,24 @@ class MovieListFragment : Fragment() {
 
         movie_recycler_view.layoutManager = LinearLayoutManager(view?.context)
         movie_recycler_view.adapter = movieAdapter
-        updateMovieList()
+        updateMovieList(search_movie_by_name_et.text.toString())
 
         add_movie_fab.setOnClickListener {
-            controller.navigate(R.id.add_movie_frag_action)
+            findNavController().navigate(R.id.add_movie_frag_action)
         }
 
         search_movie_by_name_et.addTextChangedListener {
-            launchIO {
-                launchUI {
-                    movieAdapter.updateMovieList(movieDao?.getMovieByName("${it.toString()}%"))
-                }
-            }
+            updateMovieList(it.toString())
         }
     }
 
-    private fun updateMovieList() {
+    private fun updateMovieList(name: String) {
         launchIO {
-            launchUI {
-                movieAdapter.updateMovieList(movieDao?.getAllMovie())
+            launchForResult {
+                val result = movieDao?.getMovieByName("${name.toString()}%")
+                launchUI {
+                    movieAdapter.updateMovieList(result)
+                }
             }
         }
     }
