@@ -62,6 +62,14 @@
     <string name="register_message_str">you are register</string>
     <string name="error_str">Error</string>
     <string name="error_message_str">"You are'n register, please try again"</string>
+    <string name="enter_movie_name_str">Enter movie name</string>
+    <string name="movie_image_url_str">Movie image url</string>
+    <string name="load_str">load</string>
+    <string name="movie_director_str">Movie director</string>
+    <string name="movie_name">Movie name</string>
+    <string name="movie_year_str">Movie year</string>
+    <string name="movie_duration_str">Movie duration \'min\'</string>
+    <string name="save_str">Save</string>
     <string name="s_str">С</string>
     <string name="day_str">Днем</string>
     <string name="mother_str">Матери</string>
