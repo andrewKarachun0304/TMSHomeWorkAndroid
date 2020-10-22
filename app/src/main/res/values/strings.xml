@@ -68,4 +68,12 @@
     <string name="congratulation_part1_str">Давайте скажем все спасибо Всем нашим мамам дорогим. За нашу жизнь, за наше счастье Мы очень благодарны им.</string>
     <string name="congratulation_part2_str">За трудную, за их работу, Когда воспитывали нас. За нежность, ласку и заботу Спасибо скажем мы сейчас.</string>
     <string name="congratulation_part3_str">В День матери сердца открыты Для самых добрых, теплых слов. Давайте скажем все спасибо Всем нашим мама за любовь!</string>
+    <string name="enter_movie_name_str">Enter movie name</string>
+    <string name="movie_image_url_str">Movie image url</string>
+    <string name="load_str">load</string>
+    <string name="movie_director_str">Movie director</string>
+    <string name="movie_name">Movie name</string>
+    <string name="movie_year_str">Movie year</string>
+    <string name="movie_duration_str">Movie duration \'min\'</string>
+    <string name="save_str">Save</string>
 </resources>

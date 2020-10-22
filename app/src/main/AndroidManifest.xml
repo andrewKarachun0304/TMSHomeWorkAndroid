@@ -13,6 +13,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".hw6.HomeWork6Activity"/>
         <activity android:name=".hw5.UserAccountHW5Activity" />
+        <activity android:name=".hw7.HomeWork7Activity" />
+        <activity android:name=".hw5.UserAccountHW5Activity" />
         <activity android:name=".hw5.HomeWork5Activity" />
         <activity android:name=".hw4.HomeWork4Activity" />
         <activity android:name=".hw3.HarvestActivityHW4" />
