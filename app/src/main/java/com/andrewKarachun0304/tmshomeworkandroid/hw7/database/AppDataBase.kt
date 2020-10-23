@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.database.dao.MovieDao
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.database.entity.Movie
 
-@Database(entities = [Movie::class], version = 1)
+@Database(entities = [Movie::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun getMovieDao(): MovieDao
 
