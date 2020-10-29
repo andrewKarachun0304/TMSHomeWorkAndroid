@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".hw8.HomeWork8Activity"></activity>
         <activity android:name=".hw7.HomeWork7Activity" />
-        <activity android:name=".hw6.HomeWork6Activity"/>
+        <activity android:name=".hw6.HomeWork6Activity" />
         <activity android:name=".hw5.UserAccountHW5Activity" />
         <activity android:name=".hw5.HomeWork5Activity" />
         <activity android:name=".hw4.HomeWork4Activity" />
