@@ -11,6 +11,8 @@ import com.andrewKarachun0304.tmshomeworkandroid.hw4.HomeWork4Activity
 import com.andrewKarachun0304.tmshomeworkandroid.hw5.HomeWork5Activity
 import com.andrewKarachun0304.tmshomeworkandroid.hw6.HomeWork6Activity
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.HomeWork7Activity
+import com.andrewKarachun0304.tmshomeworkandroid.hw8.HomeWork8Activity
+import com.andrewKarachun0304.tmshomeworkandroid.hw9.HomeWork9Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +29,8 @@ class MainActivity : AppCompatActivity() {
             R.id.hw5_btn -> Intent(this, HomeWork5Activity::class.java)
             R.id.hw6_btn -> Intent(this, HomeWork6Activity::class.java)
             R.id.hw7_btn -> Intent(this, HomeWork7Activity::class.java)
+            R.id.hw8_btn -> Intent(this, HomeWork8Activity::class.java)
+            R.id.hw9_btn -> Intent(this, HomeWork9Activity::class.java)
             else -> null
         }
         if (myIntent != null){

@@ -3,17 +3,21 @@
     package="com.andrewKarachun0304.tmshomeworkandroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
+        android:name=".hw9.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".hw6.HomeWork6Activity"/>
-        <activity android:name=".hw5.UserAccountHW5Activity" />
+        <service android:name=".hw9.TimerService"/>
+        <activity android:name=".hw9.HomeWork9Activity"/>
+        <activity android:name=".hw8.HomeWork8Activity" />
         <activity android:name=".hw7.HomeWork7Activity" />
+        <activity android:name=".hw6.HomeWork6Activity" />
         <activity android:name=".hw5.UserAccountHW5Activity" />
         <activity android:name=".hw5.HomeWork5Activity" />
         <activity android:name=".hw4.HomeWork4Activity" />
