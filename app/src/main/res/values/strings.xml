@@ -76,4 +76,6 @@
     <string name="movie_year_str">Movie year</string>
     <string name="movie_duration_str">Movie duration \'min\'</string>
     <string name="save_str">Save</string>
+    <string name="get_data">Get data</string>
+    <string name="crypto_str">Crypto</string>
 </resources>
