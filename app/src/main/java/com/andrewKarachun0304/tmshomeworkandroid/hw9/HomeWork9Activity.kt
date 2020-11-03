@@ -25,13 +25,12 @@ class HomeWork9Activity : AppCompatActivity() {
             timer = object : CountDownTimer(second * 1000L, 1000) {
                 override fun onTick(p0: Long) {
                     val sec = p0 / 1000 % 60
-                    val min = (p0 / 1000 % 3600) / 60
+                    val min = (p0 / 1000) / 60
                     val time = String.format(Locale.getDefault(), "$min : $sec")
                     time_tv.text = time
                 }
 
                 override fun onFinish() {
-                    serviceIntent.putExtra("time", second)
                     startService(serviceIntent)
                 }
             }
