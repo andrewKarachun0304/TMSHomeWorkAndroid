@@ -15,7 +15,7 @@ data class Data(
     @SerializedName("last_updated")
     var lastUpdated: String? = null,
     @SerializedName("max_supply")
-    var maxSupply: Long? = null,
+    var maxSupply: Double? = null,
     @SerializedName("name")
     var name: String? = null,
     @SerializedName("num_market_pairs")

@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface CryptoApi {
     @GET("cryptocurrency/listings/latest")
-    fun getCrypto(
+    fun getCryptoAsync(
         @Query("start")
         start: Int,
         @Query("limit")

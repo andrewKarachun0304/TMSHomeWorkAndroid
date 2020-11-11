@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class CryptoResponse(
     @SerializedName("data")
-    var `data`: List<Data>? = null,
+    var dataList: List<Data>? = null,
     @SerializedName("status")
     var status: Status? = null
 )
