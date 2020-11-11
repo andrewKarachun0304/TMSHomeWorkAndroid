@@ -15,5 +15,5 @@ interface CryptoApi {
         limit: Int,
         @Query("convert")
         convert: String
-    ) : Deferred<Response<CryptoResponse>>
+    ): Deferred<Response<CryptoResponse>>
 }

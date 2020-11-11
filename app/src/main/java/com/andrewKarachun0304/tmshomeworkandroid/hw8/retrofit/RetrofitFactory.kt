@@ -10,9 +10,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
-private const val BASE_URL = "https://pro-api.coinmarketcap.com/v1/"
+private const val API_KEY_VALUE = "5631e17c-e12e-459f-8ffd-3bbdbd99c05a"
 private const val API_KEY_NAME = "X-CMC_PRO_API_KEY"
-private const val API_KEY_VALUE = "eb58ea2f-1d43-405f-bb97-ef01946db5fb"
+private const val BASE_URL = "https://pro-api.coinmarketcap.com/v1/"
 
 class RetrofitFactory {
     private val interceptor = HttpLoggingInterceptor().apply {
@@ -32,12 +32,11 @@ class RetrofitFactory {
             }
         })
 
-    fun getRetrofit(): CryptoApi = Retrofit.Builder()
+    fun getInstance(): CryptoApi = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .client(client.build())
         .build()
         .create()
-
 }
