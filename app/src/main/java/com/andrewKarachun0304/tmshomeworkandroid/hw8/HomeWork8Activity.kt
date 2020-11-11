@@ -13,30 +13,21 @@ import com.andrewKarachun0304.tmshomeworkandroid.hw8.mappers.CryptoMapper
 import com.andrewKarachun0304.tmshomeworkandroid.hw8.network.CryptoApi
 import com.andrewKarachun0304.tmshomeworkandroid.hw8.retrofit.RetrofitFactory
 import kotlinx.android.synthetic.main.activity_home_work8.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeWork8Activity : AppCompatActivity() {
     private val retrofit by lazy {
-        RetrofitFactory().getRetrofit()
+        RetrofitFactory().getInstance()
     }
     private val cryptoAdapter by lazy { CryptoAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_work8)
-        val retrofit = RetrofitFactory().getInstance()
 
-        get_data_btn.setOnClickListener {
-            CoroutineScope(Dispatchers.IO).launch {
-                val response = retrofit.getCrypto(1, 4, "USD").await()
-                if (response.isSuccessful) {
-                    val cryptoResponse = response.body()
-                    withContext(Dispatchers.Main) {
-                        data_tv.text = cryptoResponse.toString()
-                    }
-                } else {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(this@HomeWork8Activity, "ERROR", Toast.LENGTH_SHORT).show()
-                    }
         swipe_refresh_crypto_layout.setOnRefreshListener {
             getData()
         }
@@ -44,7 +35,7 @@ class HomeWork8Activity : AppCompatActivity() {
         initLayout()
     }
 
-    private fun initLayout(){
+    private fun initLayout() {
         refreshingLayout(true)
         swipe_refresh_crypto_layout.setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE)
         crypto_recycler_view.apply {
@@ -69,12 +60,14 @@ class HomeWork8Activity : AppCompatActivity() {
                 }
             } else {
                 launchUI {
-                    Toast.makeText(this@HomeWork8Activity, "ERROR", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@HomeWork8Activity, "ERROR", Toast.LENGTH_SHORT)
+                        .show()
                     refreshingLayout(false)
                 }
             }
         }
     }
+
     private fun refreshingLayout(status: Boolean) {
         swipe_refresh_crypto_layout.isRefreshing = status
     }
