@@ -23,4 +23,6 @@
 
     <dimen name="coffee_iv_width">200dp</dimen>
     <dimen name="coffee_iv_height">200dp</dimen>
+
+    <dimen name="widget_margin">0dp</dimen>
 </resources>
