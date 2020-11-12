@@ -85,8 +85,8 @@
     <string name="get_data">Get data</string>
     <string name="crypto_str">Crypto</string>
     <string name="appwidget_text">EXAMPLE</string>
-    <string name="configure">Configure</string>
-    <string name="add_widget">Add widget</string>
+    <string name="add_widget">Add weather</string>
     <string name="nothing">_</string>
     <string name="weather_image">weather image</string>
+    <string name="enter_city_name">Enter city name</string>
 </resources>

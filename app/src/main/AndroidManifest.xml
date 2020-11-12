@@ -6,15 +6,17 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
-        android:networkSecurityConfig="@xml/network_security_config"
         android:name=".hw9.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <receiver android:name=".hw10.widget.WeatherAppWidget">
+        <receiver
+            android:name=".hw10.widget.WeatherAppWidget"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -22,13 +24,16 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/weather_app_widget_info" />
         </receiver>
+
         <activity android:name=".hw10.widget.WeatherAppWidgetConfigureActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
         <activity android:name=".hw10.HomeWork10Activity" />
+
         <service android:name=".hw9.TimerService" />
+
         <activity android:name=".hw9.HomeWork9Activity" />
         <activity android:name=".hw8.HomeWork8Activity" />
         <activity android:name=".hw7.HomeWork7Activity" />

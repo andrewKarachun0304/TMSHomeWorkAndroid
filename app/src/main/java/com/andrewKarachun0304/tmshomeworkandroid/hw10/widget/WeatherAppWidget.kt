@@ -13,6 +13,7 @@ import com.andrewKarachun0304.tmshomeworkandroid.hw10.mappers.WeatherMapper
 import com.andrewKarachun0304.tmshomeworkandroid.hw10.retrofit.RetrofitWeatherFactory
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.utils.launchIO
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 
 private const val WIDGETS_ID_KEY = "widgetIdsKey"
@@ -78,6 +79,7 @@ internal fun updateAppWidget(
             remoteViews.apply {
                 setViewVisibility(R.id.progress_update_pb, View.VISIBLE)
                 appWidgetManager.updateAppWidget(appWidgetId, this)
+                delay(1000)
                 setTextViewText(R.id.description_tv, currentWeather.description)
                 setTextViewText(R.id.max_temp_tv, "${currentWeather.temp.roundToInt()}\u2103")
                 setTextViewText(R.id.city_name_tv, currentWeather.cityName)

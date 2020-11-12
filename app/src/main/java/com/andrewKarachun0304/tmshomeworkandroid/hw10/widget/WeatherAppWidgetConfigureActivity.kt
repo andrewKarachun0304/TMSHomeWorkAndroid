@@ -60,9 +60,7 @@ class WeatherAppWidgetConfigureActivity : Activity() {
             finish()
             return
         }
-        appWidgetText.setText(loadTitlePref(this@WeatherAppWidgetConfigureActivity, appWidgetId))
     }
-
 }
 
 private const val PREFS_NAME =
