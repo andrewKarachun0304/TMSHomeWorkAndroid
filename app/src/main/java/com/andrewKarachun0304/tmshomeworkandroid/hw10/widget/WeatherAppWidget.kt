@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.View
 import android.widget.RemoteViews
 import com.andrewKarachun0304.tmshomeworkandroid.R
@@ -13,10 +14,15 @@ import com.andrewKarachun0304.tmshomeworkandroid.hw10.mappers.WeatherMapper
 import com.andrewKarachun0304.tmshomeworkandroid.hw10.retrofit.RetrofitWeatherFactory
 import com.andrewKarachun0304.tmshomeworkandroid.hw7.utils.launchIO
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 import kotlin.math.roundToInt
 
 private const val WIDGETS_ID_KEY = "widgetIdsKey"
+private const val WIDGET_ACTION_CLICK =
+    "com.andrewKarachun0304.tmshomeworkandroid.hw10.ACTION_CLICK"
+private const val WIDGET_REQUEST_CODE = 2121
 
 class WeatherAppWidget : AppWidgetProvider() {
     override fun onUpdate(
@@ -24,21 +30,21 @@ class WeatherAppWidget : AppWidgetProvider() {
         appWidgetManager: AppWidgetManager,
         appWidgetIds: IntArray
     ) {
+        Log.e("TAG", "onUpdate")
         val remoteViews = RemoteViews(context.packageName, R.layout.weather_app_widget)
-        val actionUpdateWidget = Intent()
+        val actionUpdateWidget = Intent(context, WeatherAppWidget::class.java)
         actionUpdateWidget.apply {
-            putExtra(WIDGETS_ID_KEY, appWidgetIds)
-            action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+            putExtra(WIDGETS_ID_KEY, appWidgetId)
+            action = WIDGET_ACTION_CLICK
         }
         val updateWidget = PendingIntent.getBroadcast(
             context,
-            101,
+            WIDGET_REQUEST_CODE,
             actionUpdateWidget,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
         remoteViews.setOnClickPendingIntent(R.id.widget_layout, updateWidget)
-        appWidgetManager.updateAppWidget(appWidgetIds, remoteViews)
-
+        appWidgetManager.updateAppWidget(appWidgetId, remoteViews)
         // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)
@@ -54,54 +60,58 @@ class WeatherAppWidget : AppWidgetProvider() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         super.onReceive(context, intent)
-        val appWidgetIds = intent?.getIntArrayExtra(WIDGETS_ID_KEY)
+        Log.e("TAG", "onReceive")
+        val appWidgetId = intent?.getIntExtra(WIDGETS_ID_KEY, 0)
         val appWidgetManager = AppWidgetManager.getInstance(context)
-        if (appWidgetIds != null && context != null) {
-            for (appWidgetId in appWidgetIds) {
-                onUpdate(context, appWidgetManager, appWidgetIds)
-            }
+        Log.e("TAG", "appWidgetIds: ${appWidgetId}")
+        if (appWidgetId != null && context != null) {
+            updateAppWidget(context, appWidgetManager, appWidgetId)
+
         }
     }
 }
+    internal fun updateAppWidget(
+        context: Context,
+        appWidgetManager: AppWidgetManager,
+        appWidgetId: Int
+    ) {
+        Log.e("TAG", "updateAppWidget start")
+//        val widgetText = loadTitlePref(context, appWidgetId)
+        // Construct the RemoteViews object
 
-internal fun updateAppWidget(
-    context: Context,
-    appWidgetManager: AppWidgetManager,
-    appWidgetId: Int
-) {
-    val widgetText = loadTitlePref(context, appWidgetId)
-    // Construct the RemoteViews object
-    val remoteViews = RemoteViews(context.packageName, R.layout.weather_app_widget)
 
-    launchIO {
-        val currentWeather = getWeather(widgetText)
-        if (currentWeather != null) {
-            remoteViews.apply {
+        launchIO {
+            with(remoteViews) {
                 setViewVisibility(R.id.progress_update_pb, View.VISIBLE)
                 appWidgetManager.updateAppWidget(appWidgetId, this)
-                delay(1000)
-                setTextViewText(R.id.description_tv, currentWeather.description)
-                setTextViewText(R.id.max_temp_tv, "${currentWeather.temp.roundToInt()}\u2103")
-                setTextViewText(R.id.city_name_tv, currentWeather.cityName)
+                getWeather(loadTitlePref(context, appWidgetId))?.let { currentWeather ->
+                    delay(1000)
+                    setTextViewText(R.id.description_tv, currentWeather.description)
+                    withContext(Dispatchers.Main){
+                        Log.e("TAG", currentWeather.cityName)
+                    }
+                    setTextViewText(R.id.max_temp_tv, "${currentWeather.temp.roundToInt()}\u2103")
+                    setTextViewText(R.id.city_name_tv, currentWeather.cityName)
+                    setImageViewBitmap(
+                        R.id.weather_icon_iv,
+                        Picasso.get()
+                            .load("http://openweathermap.org/img/wn/${currentWeather.iconId}@2x.png")
+                            .get()
+                    )
+                }
                 setViewVisibility(R.id.progress_update_pb, View.INVISIBLE)
-                setImageViewBitmap(
-                    R.id.weather_icon_iv,
-                    Picasso.get()
-                        .load("http://openweathermap.org/img/wn/${currentWeather.iconId}@2x.png")
-                        .get()
-                )
                 appWidgetManager.updateAppWidget(appWidgetId, this)
             }
+            Log.e("TAG", "updateAppWidget end")
         }
     }
-}
 
-private suspend fun getWeather(cityName: String): CurrentWeather? {
-    val retrofit = RetrofitWeatherFactory.getInstance()
-    val response = retrofit.getWeatherInfoAsync(cityName).await()
-    return if (response.isSuccessful) {
-        WeatherMapper.parse(response.body())
-    } else {
-        null
+    private suspend fun getWeather(cityName: String): CurrentWeather? {
+        val retrofit = RetrofitWeatherFactory.getInstance()
+        val response = retrofit.getWeatherInfoAsync(cityName).await()
+        return if (response.isSuccessful) {
+            WeatherMapper.parse(response.body())
+        } else {
+            null
+        }
     }
-}
