@@ -61,11 +61,11 @@ class WeatherAppWidget : AppWidgetProvider() {
     override fun onReceive(context: Context?, intent: Intent?) {
         super.onReceive(context, intent)
         Log.e("TAG", "onReceive")
-        val appWidgetId = intent?.getIntExtra(WIDGETS_ID_KEY, 0)
+        val appWidgetIds = intent?.getIntArrayExtra(WIDGETS_ID_KEY)
         val appWidgetManager = AppWidgetManager.getInstance(context)
-        Log.e("TAG", "appWidgetIds: ${appWidgetId}")
-        if (appWidgetId != null && context != null) {
-            updateAppWidget(context, appWidgetManager, appWidgetId)
+        Log.e("TAG", "appWidgetIds: ${appWidgetIds}")
+        if (appWidgetIds != null && context != null) {
+            onUpdate(context, appWidgetManager, appWidgetIds)
 
         }
     }
