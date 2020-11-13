@@ -34,7 +34,7 @@ class WeatherAppWidget : AppWidgetProvider() {
         val remoteViews = RemoteViews(context.packageName, R.layout.weather_app_widget)
         val actionUpdateWidget = Intent(context, WeatherAppWidget::class.java)
         actionUpdateWidget.apply {
-            putExtra(WIDGETS_ID_KEY, appWidgetId)
+            putExtra(WIDGETS_ID_KEY, appWidgetIds)
             action = WIDGET_ACTION_CLICK
         }
         val updateWidget = PendingIntent.getBroadcast(
@@ -44,7 +44,7 @@ class WeatherAppWidget : AppWidgetProvider() {
             PendingIntent.FLAG_UPDATE_CURRENT
         )
         remoteViews.setOnClickPendingIntent(R.id.widget_layout, updateWidget)
-        appWidgetManager.updateAppWidget(appWidgetId, remoteViews)
+        appWidgetManager.updateAppWidget(appWidgetIds, remoteViews)
         // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)
@@ -76,9 +76,8 @@ class WeatherAppWidget : AppWidgetProvider() {
         appWidgetId: Int
     ) {
         Log.e("TAG", "updateAppWidget start")
-//        val widgetText = loadTitlePref(context, appWidgetId)
         // Construct the RemoteViews object
-
+        val remoteViews = RemoteViews(context.packageName, R.layout.weather_app_widget)
 
         launchIO {
             with(remoteViews) {
