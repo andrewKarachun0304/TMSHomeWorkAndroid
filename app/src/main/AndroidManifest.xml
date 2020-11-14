@@ -15,11 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <receiver
-            android:name=".hw10.widget.WeatherAppWidget"
-            android:exported="true">
+            android:name=".hw10.widget.WeatherAppWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.andrewKarachun0304.tmshomeworkandroid.hw10.ACTION_CLICK" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
