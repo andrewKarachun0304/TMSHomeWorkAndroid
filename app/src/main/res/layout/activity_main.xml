@@ -10,98 +10,137 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/background_str"
         android:scaleType="centerCrop"
-        android:src="@drawable/sky"
-        android:contentDescription="@string/background_str" />
+        android:src="@drawable/sky" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw1_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_1_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw2_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_2_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw1_btn" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw3_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_3_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw2_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw1_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_1_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw4_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_4_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw3_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw2_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_2_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw1_btn" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw5_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_5_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw4_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw3_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_3_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw2_btn" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw6_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:text="@string/home_work_6_str"
-        android:onClick="homeWorkBtnOnClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw5_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw4_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_4_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw3_btn" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw7_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_7_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw6_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw5_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_5_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw4_btn" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw8_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_8_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw7_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw6_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_6_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw5_btn" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw9_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_9_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw8_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw7_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_7_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw6_btn" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/hw10_btn"
-        style="@style/MyMaterialButtonStyle"
-        android:onClick="homeWorkBtnOnClick"
-        android:text="@string/home_work_10_str"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hw9_btn" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw8_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_8_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw7_btn" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw9_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_9_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw8_btn" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw10_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_10_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw9_btn" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw11_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_11_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw10_btn" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw12_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_12_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw11_btn" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hw13_btn"
+                style="@style/MyMaterialButtonStyle"
+                android:onClick="homeWorkBtnOnClick"
+                android:text="@string/home_work_13_str"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hw12_btn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
