@@ -84,4 +84,5 @@
     <string name="stop_str">Stop</string>
     <string name="get_data">Get data</string>
     <string name="crypto_str">Crypto</string>
+    <string name="illumination_value">Illumination value</string>
 </resources>

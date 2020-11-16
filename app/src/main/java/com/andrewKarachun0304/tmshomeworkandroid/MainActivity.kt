@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.andrewKarachun0304.tmshomeworkandroid.hw1.HomeWork1Activity
+import com.andrewKarachun0304.tmshomeworkandroid.hw11.HomeWork11Activity
 import com.andrewKarachun0304.tmshomeworkandroid.hw2.HomeWork2Activity
 import com.andrewKarachun0304.tmshomeworkandroid.hw3.HarvestActivityHW4
 import com.andrewKarachun0304.tmshomeworkandroid.hw4.HomeWork4Activity
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             R.id.hw7_btn -> Intent(this, HomeWork7Activity::class.java)
             R.id.hw8_btn -> Intent(this, HomeWork8Activity::class.java)
             R.id.hw9_btn -> Intent(this, HomeWork9Activity::class.java)
+            R.id.hw11_btn -> Intent(this, HomeWork11Activity::class.java)
             else -> null
         }
         if (myIntent != null){
