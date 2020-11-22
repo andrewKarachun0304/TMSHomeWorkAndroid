@@ -89,4 +89,7 @@
     <string name="nothing">_</string>
     <string name="weather_image">weather image</string>
     <string name="enter_city_name">Enter city name</string>
+    <string name="enter_the_number_of_the_fibonacci_number">Enter the number of the fibonacci number</string>
+    <string name="enter_number">Enter number</string>
+    <string name="calculate">Calculate</string>
 </resources>
