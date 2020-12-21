@@ -15,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".hw12.HomeWork12Activity"></activity>
+
+        <receiver android:name=".hw10.widget.WeatherAppWidget">
+
         <activity android:name=".hw13.HomeWork13Activity"></activity>
 
         <receiver android:name=".hw10.widget.WeatherAppWidget">
