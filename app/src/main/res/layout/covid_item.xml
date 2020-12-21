@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/covid_item_country_name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="8dp"
+            android:textSize="20sp"
+            tools:text="Country name"
+            android:gravity="center_horizontal"/>
+
+        <ImageView
+            android:id="@+id/covid_item_flag_image_iv"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/covid_item_country_name_tv"
+            android:contentDescription="@string/flags_str" />
+
+        <TextView
+            android:id="@+id/covid_item_total_confirmed_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/covid_item_flag_image_iv"
+            app:layout_constraintTop_toBottomOf="@+id/covid_item_country_name_tv"
+            android:textSize="18sp"
+            tools:text="Confirmed"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/covid_item_total_deaths_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/covid_item_flag_image_iv"
+            app:layout_constraintTop_toBottomOf="@+id/covid_item_total_confirmed_tv"
+            android:textSize="18sp"
+            tools:text="Deaths"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/covid_item_total_recovered_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/covid_item_flag_image_iv"
+            app:layout_constraintTop_toBottomOf="@+id/covid_item_total_deaths_tv"
+            tools:text="Recovered" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
