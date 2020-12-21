@@ -14,9 +14,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".hw13.HomeWork13Activity"></activity>
 
         <receiver android:name=".hw10.widget.WeatherAppWidget">
+        <activity android:name=".hw11.HomeWork11Activity"></activity>
+
+        <receiver
+            android:name=".hw10.widget.WeatherAppWidget">
+
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
